@@ -7,7 +7,7 @@ public class App {
 		int n = Integer.parseInt(param[0]);
 		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 
-		int cnt = n - 1; // ループの回数
+		int cnt = n ; // ループの回数
 		int[] attack = new int[cnt]; // カードの攻撃力用配列
 		int[] cost = new int[cnt]; // カードのコスト用配列
 
