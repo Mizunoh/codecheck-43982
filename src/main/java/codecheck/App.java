@@ -51,6 +51,7 @@ public class App {
 				}
 			}
 		}
+		System.out.println(cost[1]);
 
 		// 順番にコストをMPの範囲内で加算し、攻撃力の最大値を得る
 		int mpCost = 0;
