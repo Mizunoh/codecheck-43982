@@ -8,11 +8,11 @@ public class App {
 		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 
 		int cnt = n-1;
-		int[] attack = new int[cnt]; // カードの攻撃力用配列
-		int[] cost = new int[cnt]; // カードのコスト用配列
+		int[] attack = new int[n]; // カードの攻撃力用配列
+		int[] cost = new int[n]; // カードのコスト用配列
 
 		// カード情報
-		for (int i = 0; i < cnt; i++) {
+		for (int i = 0; i < n; i++) {
 			attack[i] = Integer.parseInt(param[i + 2]); // カードの攻撃力
 			cost[i] = Integer.parseInt(param[i + 3]); // カードのコスト
 		}
