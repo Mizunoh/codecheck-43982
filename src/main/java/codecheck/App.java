@@ -5,16 +5,19 @@ public class App {
 	public static void main(String[] args) {
 		int n = Integer.parseInt(args[0]); // カードの枚数
 		int m = Integer.parseInt(args[1]); // プレイヤーのMP
+		System.out.println(n);
+		System.out.println(m);
 
 		int cnt = n - 1; // ループの回数
-		int[] attack = new int[n]; // カードの攻撃力用配列
-		int[] cost = new int[n]; // カードのコスト用配列
+		int[] attack = new int[cnt]; // カードの攻撃力用配列
+		int[] cost = new int[cnt]; // カードのコスト用配列
 
 		// カード情報
 		for (int i = 0; i < cnt; i++) {
 			attack[i] = Integer.parseInt(args[i + 2]); // カードの攻撃力
 			cost[i] = Integer.parseInt(args[i + 3]); // カードのコスト
 		}
+		System.out.println(attack[0]);
 
 		// 攻撃力の昇順に並べる
 		for (int j = 0; j < cnt-1; j++) {
