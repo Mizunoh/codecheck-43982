@@ -3,10 +3,11 @@ package codecheck;
 
 public class App {
 	public static void main(String[] args) {
-		System.out.println(args[0]);
-		int n = Integer.parseInt(args[0]); // カードの枚数
-		int m = Integer.parseInt(args[1]); // プレイヤーのMP
+		String[] param = args[0].split(" ", 0);
+		//int n = Integer.parseInt(args[0].substring(0, args[i].indexOf(" "))); // カードの枚数
+		int n = Integer.parseInt(param[0]);
 		System.out.println(n);
+		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 		System.out.println(m);
 
 		int cnt = n - 1; // ループの回数
@@ -15,8 +16,8 @@ public class App {
 
 		// カード情報
 		for (int i = 0; i < cnt; i++) {
-			attack[i] = Integer.parseInt(args[i + 2]); // カードの攻撃力
-			cost[i] = Integer.parseInt(args[i + 3]); // カードのコスト
+			attack[i] = Integer.parseInt(param[i + 2]); // カードの攻撃力
+			cost[i] = Integer.parseInt(param[i + 3]); // カードのコスト
 		}
 		System.out.println(attack[0]);
 
