@@ -3,6 +3,7 @@ package codecheck;
 
 public class App {
 	public static void main(String[] args) {
+		System.out.println(args[0]);
 		int n = Integer.parseInt(args[0]); // カードの枚数
 		int m = Integer.parseInt(args[1]); // プレイヤーのMP
 		System.out.println(n);
