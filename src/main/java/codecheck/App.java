@@ -56,10 +56,10 @@ public class App {
 		int mpCost = 0;
 		int outputAttack = 0;
 		for (int l = cnt; l >= 0; l--){
-			System.out.println(l);
+			System.out.println(cost[l]);
 			if (mpCost + cost[l] <= m) {
-				mpCost = mpCost + cost[l]; // コストを加算
-				outputAttack = outputAttack + attack[l]; //攻撃力を加算
+				mpCost += cost[l]; // コストを加算
+				outputAttack += attack[l]; //攻撃力を加算
 				if (mpCost == m){
 					break;
 				}
