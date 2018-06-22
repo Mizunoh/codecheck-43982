@@ -7,7 +7,7 @@ public class App {
 		int n = Integer.parseInt(param[0]); // カードの枚数
 		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 
-		int cnt = n-1;
+		//int cnt = n-1;
 		int[] attack = new int[n]; // カードの攻撃力用配列
 		int[] cost = new int[n]; // カードのコスト用配列
 
@@ -56,7 +56,7 @@ public class App {
 		// 順番にコストをMPの範囲内で加算し、攻撃力の最大値を得る
 		int mpCost = 0;
 		int outputAttack = 0;
-		for (int l = cnt; l >= 0; l--){
+		for (int l = n-1; l >= 0; l--){
 			System.out.println(cost[l]);
 			if (mpCost + cost[l] <= m) {
 				mpCost += cost[l]; // コストを加算
