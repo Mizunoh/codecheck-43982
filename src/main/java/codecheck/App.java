@@ -55,7 +55,7 @@ public class App {
 		// 順番にコストをMPの範囲内で加算し、攻撃力の最大値を得る
 		int mpCost = 0;
 		int outputAttack = 0;
-		for (int l = n; l <= 0; l--){
+		for (int l = n; l >= 0; l--){
 			if (mpCost + cost[l] <= m) {
 				mpCost = mpCost + cost[l]; // コストを加算
 				outputAttack = outputAttack + attack[l]; //攻撃力を加算
