@@ -4,9 +4,10 @@ package codecheck;
 public class App {
 	public static void main(String[] args) {
 		String[] param = args[0].split(" ", 0);
-		int cnt = Integer.parseInt(param[0]); // カードの枚数
+		int n = Integer.parseInt(param[0]); // カードの枚数
 		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 
+		int cnt = n-1;
 		int[] attack = new int[cnt]; // カードの攻撃力用配列
 		int[] cost = new int[cnt]; // カードのコスト用配列
 
@@ -18,9 +19,9 @@ public class App {
 
 
 		// 攻撃力の昇順に並べる
-		for (int j = 0; j < cnt-1; j++) {
+		for (int j = 0; j < n; j++) {
 			int pos = j;
-			for (int k = j+1; k < cnt; k++){
+			for (int k = j+1; k < n-1; k++){
 				if (attack[k] < attack[pos]){
 					pos = k;
 				}
@@ -34,9 +35,9 @@ public class App {
 		}
 
 		// 攻撃力が同じ場合、コスト順に並び替える
-		for (int j = 0; j < cnt-1; j++) {
+		for (int j = 0; j < n; j++) {
 			int pos = j;
-			for (int k = j+1; k < cnt; k++){
+			for (int k = j+1; k < n-1; k++){
 				if (attack[k] == attack[pos]){
 					if (cost[k] < cost[pos]){
 						pos = k;
@@ -54,7 +55,7 @@ public class App {
 		// 順番にコストをMPの範囲内で加算し、攻撃力の最大値を得る
 		int mpCost = 0;
 		int outputAttack = 0;
-		for (int l = cnt; l <= 0; l--){
+		for (int l = n; l <= 0; l--){
 			if (mpCost + cost[l] <= m) {
 				mpCost = mpCost + cost[l]; // コストを加算
 				outputAttack = outputAttack + attack[l]; //攻撃力を加算
