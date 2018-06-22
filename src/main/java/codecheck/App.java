@@ -4,10 +4,9 @@ package codecheck;
 public class App {
 	public static void main(String[] args) {
 		String[] param = args[0].split(" ", 0);
-		int n = Integer.parseInt(param[0]);
+		int cnt = Integer.parseInt(param[0]); // カードの枚数
 		int m = Integer.parseInt(param[1]); // プレイヤーのMP
 
-		int cnt = n ; // ループの回数
 		int[] attack = new int[cnt]; // カードの攻撃力用配列
 		int[] cost = new int[cnt]; // カードのコスト用配列
 
@@ -15,7 +14,6 @@ public class App {
 		for (int i = 0; i < cnt; i++) {
 			attack[i] = Integer.parseInt(param[i + 2]); // カードの攻撃力
 			cost[i] = Integer.parseInt(param[i + 3]); // カードのコスト
-			System.out.println(param[i + 2]);
 		}
 
 
@@ -60,6 +58,7 @@ public class App {
 			if (mpCost + cost[l] <= m) {
 				mpCost = mpCost + cost[l]; // コストを加算
 				outputAttack = outputAttack + attack[l]; //攻撃力を加算
+				System.out.println(outputAttack);
 				if (mpCost == m){
 					break;
 				}
